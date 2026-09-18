@@ -37,12 +37,22 @@ AI-generated interfaces almost universally converge on identical, sloppy pattern
 
 This skill provides the exact rules and tokens to cure those tropes before code is emitted.
 
+## 7-Axis Quality Gate
+
+1. **Typography Gate:** Explicit tracking and optical scale; max 2 font families; <= 75ch body line length.
+2. **Color Token Gate:** Semantic tokens exclusively (surface, border, text, accent); zero raw unmapped hex.
+3. **Interactive State Gate:** All 5 core states implemented: default, hover, focus-visible, active, and disabled.
+4. **Layout & Hierarchy Gate:** 1-to-3 UX rule; purposeful asymmetric layouts over uniform 3-card AI grids.
+5. **Contrast & Accessibility Gate:** WCAG 2.2 AA compliant (>= 4.5:1 text contrast, visible focus rings).
+6. **Micro-Interaction Gate:** <200ms ease-out transitions; 0ms instant for high-frequency actions (>100/day).
+7. **Mobile Linearity Gate:** Single-column responsive collapse; zero page-level horizontal overflow; >= 44px touch targets.
+
 ## Maintenance Notes
 
 - All guidelines must remain directly testable in automated code reviews
 - Every color decision must map to a semantic role (surface, border, text, accent)
 - Typography scales must define line-height and letter-spacing alongside font size
-- Component rules must define hover, focus-visible, active, disabled, and loading states
+- Component rules must define default, hover, focus-visible, active, and disabled states
 
 ## Recommended Use
 

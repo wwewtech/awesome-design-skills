@@ -34,7 +34,7 @@ Direct, confident, technical, concise, and authentic. Zero marketing buzzwords o
 
 ## Rules: Do
 - select a distinct typographic personality (editorial serif, technical mono, or geometric grotesque)
-- define all 5 interactive states (default, hover, focus-visible, active, disabled)
+- define all 5 interactive states: default, hover, focus-visible, active, disabled
 - use semantic color tokens for background, border, text, and accent
 - anchor layouts with asymmetric grids, split screens, or clear reading rhythm
 - verify contrast ratios across both light and dark themes
@@ -46,12 +46,14 @@ Direct, confident, technical, concise, and authentic. Zero marketing buzzwords o
 - do not use raw saturated neons on dark backgrounds without semantic roles
 - do not generate fake stats, testimonials, or emoji badge noise
 
-## Quality Gates
-- Typography Check: Heading font and body font have explicit tracking and weights
-- Color Check: Palette contains no arbitrary raw hex outside the semantic token set
-- State Check: Every interactive element has defined hover, focus-visible, and active styles
-- Layout Check: Avoids symmetrical 3-column AI card layouts unless structurally warranted
-- Contrast Check: All text meets WCAG AA standards against its background surface
+## Pre-Emit 7-Axis Quality Gates
+1. **Typography Gate:** Headings and body copy must specify explicit tracking and line-height; line length for long-form prose must not exceed 75 characters.
+2. **Color Token Gate:** All emitted colors must map to defined semantic tokens (surface, border, text, accent); zero raw uncalibrated hex values outside the token set.
+3. **Interactive State Gate:** Every interactive primitive must implement all 5 states: default (resting contrast), hover (brightness shift), focus-visible (2px outline with 2px offset), active (tactile transform scale 0.97), and disabled (reduced opacity, pointer-events none).
+4. **Layout & Hierarchy Gate:** Layouts must enforce the 1-to-3 UX rule (exactly 1 dominant primary action per viewport section, maximum 3 secondary actions); hero sections must use asymmetric split-column or sequential vertical hierarchy rather than uniform 3-card grid templates.
+5. **Contrast & Accessibility Gate:** All text must meet WCAG 2.2 AA standards (minimum 4.5:1 for standard body text, 3.0:1 for large display headers and interactive borders).
+6. **Micro-Interaction Gate:** Interactive transitions must remain under 200ms ease-out (cubic-bezier(0.23, 1, 0.32, 1)); high-frequency actions (>100 operations/day) must be instant (0ms duration).
+7. **Mobile Linearity Gate:** Viewport must scale cleanly to a single-column layout without page-level horizontal overflow (root `overflow-x: hidden`), permitting horizontal scrolling (`overflow-x: auto`) only inside wide-content containers like data tables and code blocks, with touch targets >= 44px.
 
 ## Expected Output Structure
 When generating UI guidance or code:
@@ -59,6 +61,6 @@ When generating UI guidance or code:
 2. Semantic Token System (Colors, Typography, Spacing)
 3. Component Implementation (HTML/JSX with complete state styling)
 4. Responsive & Keyboard Interaction Behaviors
-5. Pre-Emit Quality Gate Verification
+5. Pre-Emit 7-Axis Quality Gate Verification
 
 <!-- TYPEUI_SH_MANAGED_END -->
