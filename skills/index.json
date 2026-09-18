@@ -5,6 +5,12 @@
     "skillPath": "skills/agentic/SKILL.md",
     "designPath": "skills/agentic/DESIGN.md"
   },
+  "anti-slop-design": {
+    "slug": "anti-slop-design",
+    "name": "Anti-Slop Design",
+    "skillPath": "skills/anti-slop-design/SKILL.md",
+    "designPath": "skills/anti-slop-design/DESIGN.md"
+  },
   "artistic": {
     "slug": "artistic",
     "name": "Artistic",
